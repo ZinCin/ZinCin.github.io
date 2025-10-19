@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZinCin Projects Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: linear-gradient(120deg, #f5f7fa 0%, #e8ecf1 100%);
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #3cc4ed;
+            box-shadow: 0 10px 25px rgba(60, 196, 237, 0.3);
+        }
+        
+        .back-button:hover svg path {
+            stroke: #fff;
+        }
+        
+        .back-button svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, #1a2a6c, #2980b9);
+            color: #fff;
+            position: relative;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            margin-right: 25px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title-container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .title-container .hi {
+            font-size: 48px;
+            margin-right: 10px;
+        }
+        
+        .title-container .name {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .title-container .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image-container {
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .project-description {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, #e1f0fa, #d1e7ff);
+            color: #2c3e50;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-link {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .view-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .view-button i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .view-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                max-width: 95%;
+            }
+            
+            header {
+                padding: 25px 30px;
+            }
+            
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .title-container h1 {
+                font-size: 28px;
+            }
+            
+            .title-container .hi {
+                font-size: 42px;
+            }
+            
+            .title-container .name {
+                font-size: 32px;
+            }
+            
+            .title-container .subtitle {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .project-image-container {
+                height: 140px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar {
+                margin: 0 auto 15px;
+            }
+            
+            .title-container h1 {
+                justify-content: center;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-image-container {
+                height: 180px;
+            }
+            
+            .view-button {
+                padding: 10px 22px;
+                font-size: 15px;
+            }
+            
+            .back-button {
+                top: 10px;
+                left: 10px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-button svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#3cc4ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <div class="container">
+        <header>
+            <img src="https://i.imgur.com/KotE6sG.png" alt="ZinCin" class="avatar">
+            <div class="title-container">
+                <h1><span class="hi">hi!</span><span class="name">I'm ZinCin</span></h1>
+                <div class="subtitle">python, turbo and js <span class="highlight">developer :3</span></div>
+            </div>
+        </header>
+        <div class="content">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="https://i.imgur.com/q3Z99v4.jpeg" alt="Univ Extension" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Turbowarp Extension «Univ»</h3>
+                        <p class="project-description">Advanced utility for some new features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Turbo</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/ZinCin/Utility-extension-for-turbowarp" class="view-button">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                    <a href="https://github.com/ZinCin/Utility-extension-for-turbowarp" class="project-link"></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="https://i.imgur.com/kjvYRC5.png" alt="Overtale" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Overtale</h3>
+                        <p class="project-description">My cool game - Overtale!</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Turbo</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                        <a href="https://t.me/Overtale" class="view-button">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                    <a href="https://t.me/Overtale" class="project-link"></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <p>Creating programms with Python, Turbo and JavaScript</p>
+                <div class="copyright">© 2025 ZinCin</div>
+            </div>
+        </footer>
+    </div>
+    
+    <audio id="click-sound" preload="auto">
+        <source src="sounds/click.wav" type="audio/wav">
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const clickSound = document.getElementById('click-sound');
+            const backButton = document.querySelector('.back-button');
+            
+            backButton.addEventListener('click', function() {
+                clickSound.play();
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
