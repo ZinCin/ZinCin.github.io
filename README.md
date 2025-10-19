@@ -1,2 +1,2 @@
-# My main site
-This is my mini site! Made with pure html
+# ZinCin
+My website :3
