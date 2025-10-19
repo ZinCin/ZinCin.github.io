@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZinCin | Social Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #3cc4ed;
+            box-shadow: 0 10px 25px rgba(60, 196, 237, 0.3);
+        }
+        .back-button:hover svg path {
+            stroke: #fff;
+        }
+        .back-button svg {
+            width: 24px;
+            height: 24px;
+        }
+        div#container {
+            max-width: 600px;
+            width: 90%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        div#header {
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 16px;
+            color: #7f8c8d;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        div.icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Увеличили расстояние между иконками */
+            margin-bottom: 40px; /* Увеличили отступ между рядами */
+            flex-wrap: wrap;
+        }
+        div.icon-container {
+            width: 100px; /* Увеличили размер контейнера */
+            height: 100px; /* Увеличили размер контейнера */
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+        div.icon-container:hover {
+            background-color: #3498db;
+            transform: scale(1.1);
+            border-color: #3498db;
+        }
+        div.icon-container:hover img {
+            filter: brightness(0) invert(1);
+        }
+        /* Specific telegram icon */
+        a[href*="telegram"] .icon-container:hover img {
+            filter: brightness(0) invert(1) grayscale(0%) !important;
+        }
+        img.icon {
+            width: 50px; /* Увеличили размер иконок */
+            height: 50px; /* Увеличили размер иконок */
+            transition: all 0.3s ease;
+        }
+        /* Individual colors */
+        a[href*="telegram"] .icon-container:hover {
+            background-color: #229ED9;
+            border-color: #229ED9;
+        }
+        a[href*="github"] .icon-container:hover {
+            background-color: #333;
+            border-color: #333;
+        }
+        a[href*="itch.io"] .icon-container:hover {
+            background-color: #FA5C5C;
+            border-color: #FA5C5C;
+        }
+        a[href*="discord"] .icon-container:hover {
+            background-color: #5865F2;
+            border-color: #5865F2;
+        }
+        div.info-box {
+            margin-top: 40px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+        }
+        div.footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            div.icons-row {
+                gap: 30px;
+            }
+            div.icon-container {
+                width: 90px;
+                height: 90px;
+            }
+            img.icon {
+                width: 45px;
+                height: 45px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            div#container {
+                padding: 30px 20px;
+            }
+            div.icons-row {
+                gap: 20px;
+            }
+            div.icon-container {
+                width: 80px;
+                height: 80px;
+            }
+            img.icon {
+                width: 40px;
+                height: 40px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#3cc4ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <div id="container">
+        <div id="header">
+            <h1>Connect with me</h1>
+            <p>Click on any icon below to visit my profiles. All links open in a new tab!</p>
+        </div>
+        <div class="icons-row">
+            <a href="https://t.me/ZinCin" target="_blank">
+                <div class="icon-container">
+                    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                </div>
+            </a>
+            <a href="https://github.com/ZinCin" target="_blank">
+                <div class="icon-container">
+                    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                </div>
+            </a>
+        </div>
+        <div class="icons-row">
+            <a href="https://zincin.itch.io/" target="_blank">
+                <div class="icon-container">
+                    <img class="icon" src="https://static.itch.io/images/itchio-textless-black.svg" alt="Itch.io">
+                </div>
+            </a>
+            <a href="https://discordapp.com/users/1091392550834802820" target="_blank">
+                <div class="icon-container">
+                    <img class="icon" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/62595384e89d1d54d704ece7_3437c10597c1526c3dbd98c737c2bcae.svg" alt="Discord">
+                </div>
+            </a>
+        </div>
+        <div class="info-box">
+            <p>Clicking any of the links will open a new tab!</p>
+        </div>
+        <div class="footer">
+            <p>© 2023 ZinCin | Social Links</p>
+        </div>
+    </div>
+    
+    <audio id="click-sound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mp3">
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const clickSound = document.getElementById('click-sound');
+            const backButton = document.querySelector('.back-button');
+            
+            backButton.addEventListener('click', function() {
+                clickSound.play();
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
