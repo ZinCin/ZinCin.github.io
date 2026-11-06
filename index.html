@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e1013">
+  <meta name="description" content="ZinCin — personal website, projects and experiments.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="home">
+  <meta property="og:title" content="home">
+  <meta property="og:description" content="ZinCin's home page ^^">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="home — ZinCin">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="avatar-cookie-9" clipPathUnits="objectBoundingBox">
+        <path d="M 0.4287,0.0443 C 0.4692,0.0076 0.5308,0.0076 0.5713,0.0443 L 0.6130,0.0822 C 0.6336,0.1008 0.6606,0.1107 0.6884,0.1096 L 0.7447,0.1074 C 0.7992,0.1053 0.8465,0.1449 0.8539,0.1990 L 0.8615,0.2549 C 0.8653,0.2824 0.8797,0.3073 0.9016,0.3243 L 0.9462,0.3588 C 0.9893,0.3923 1.0000,0.4530 0.9709,0.4992 L 0.9408,0.5469 C 0.9260,0.5704 0.9210,0.5987 0.9269,0.6259 L 0.9388,0.6810 C 0.9504,0.7343 0.9196,0.7877 0.8676,0.8044 L 0.8139,0.8216 C 0.7875,0.8301 0.7654,0.8486 0.7525,0.8732 L 0.7262,0.9230 C 0.7008,0.9713 0.6428,0.9924 0.5923,0.9718 L 0.5401,0.9505 C 0.5144,0.9400 0.4856,0.9400 0.4599,0.9505 L 0.4077,0.9718 C 0.3572,0.9924 0.2992,0.9713 0.2738,0.9230 L 0.2475,0.8732 C 0.2346,0.8486 0.2125,0.8301 0.1861,0.8216 L 0.1324,0.8044 C 0.0804,0.7877 0.0496,0.7343 0.0612,0.6810 L 0.0731,0.6259 C 0.0790,0.5987 0.0740,0.5704 0.0592,0.5469 L 0.0291,0.4992 C 0.0000,0.4530 0.0107,0.3923 0.0538,0.3588 L 0.0984,0.3243 C 0.1203,0.3073 0.1347,0.2824 0.1385,0.2549 L 0.1461,0.1990 C 0.1535,0.1449 0.2008,0.1053 0.2553,0.1074 L 0.3116,0.1096 C 0.3394,0.1107 0.3664,0.1008 0.3870,0.0822 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="desk" id="desk">
+    <section class="card clock" id="clock-window" aria-label="Time and weather">
+      <div class="time" id="time"></div>
+      <div class="date" id="date"></div>
+      <div class="statusline">
+        <div class="wx" id="wx" hidden aria-label="Weather">
+          <svg class="wx-i" id="wx-i" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+          <span class="wx-t" id="wx-t"></span>
+          <span class="wx-d" id="wx-d"></span>
+        </div>
+        <div class="greeting" id="greeting" aria-label="Greeting in visitor's local time">
+          <svg class="greeting-i" id="greeting-i" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+          <span id="greeting-text">Good day</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win about-window" id="about-window" data-window data-draggable aria-label="About ZinCin">
+      <div class="tb" data-drag-handle>
+        <span class="tt">about/</span>
+      </div>
+      <div class="wbody">
+        <div class="about">
+          <div class="who">
+            <div class="avatar" aria-label="ZinCin avatar">
+              <span>Z</span>
+              <img src="assets/avatar.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="identity-text">
+              <h1>ZinCin</h1>
+              <div class="handle">@ZinCin</div>
+            </div>
+          </div>
+
+
+          <div class="window-launchers" aria-label="Open windows">
+            <button class="launcher" type="button" data-open-window="projects-window" aria-controls="projects-window" aria-expanded="false">
+              <span class="launcher-mark mark-projects" aria-hidden="true">▤</span>projects
+            </button>
+            <button class="launcher" type="button" data-open-window="links-window" aria-controls="links-window" aria-expanded="false">
+              <span class="launcher-mark mark-links" aria-hidden="true">↗</span>links
+            </button>
+            <button class="launcher" type="button" data-open-window="fastfetch-window" aria-controls="fastfetch-window" aria-expanded="true">
+              <span class="launcher-mark mark-system" aria-hidden="true">⌘</span>system
+            </button>
+          </div>
+          <p class="bio">Программирую, создаю игры и экспериментирую с электроникой. Люблю разбираться в технологиях и доводить собственные идеи до работающих проектов</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="win floating-window projects-window" id="projects-window" data-window data-draggable hidden aria-label="Projects">
+      <div class="tb" data-drag-handle>
+        <span class="tt">projects/</span>
+        <button class="window-close" type="button" data-close-window aria-label="Close projects window">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="wbody window-scroll">
+        <div class="projects">
+          <a class="project" href="https://google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open retro console project link">
+            <div class="project-top"><span class="project-no">01</span><span class="project-type">HARDWARE / SOFTWARE ↗</span></div>
+            <h2>Ретро-консоль на ESP32</h2>
+            <p>Самодельная портативная консоль: схема, дисплей, клавиатура и джойстик, несколько игр и собственный лаунчер. Корпус смоделирован и напечатан на 3D-принтере. (WIP)</p>
+            <div class="tags"><span>C++</span><span>ESP32</span><span>embedded</span><span>3D printing</span></div>
+          </a>
+          <a class="project" href="https://t.me/artif_life/" target="_blank" rel="noopener noreferrer" aria-label="Cellular automat link">
+            <div class="project-top"><span class="project-no">02</span><span class="project-type">PROGRAMMS ↗</span></div>
+            <h2>Искуственная жизнь (клеточный автомат)</h2>
+            <p>Проект по симулции искуственной жизни для понимания работы искуственного отбора и реализации сложных структур данных. Первый проект на Godot!</p>
+            <div class="tags"><span>GODOT</span><span>CodeArt</span><span>Cellular Automat</span></div>
+          </a>
+		  <a class="project" href="https://github.com/ZinCin/portal-gravity-engine" target="_blank" rel="noopener noreferrer" aria-label="Open simulation project link">
+            <div class="project-top"><span class="project-no">03</span><span class="project-type">PROGRAMMS ↗</span></div>
+            <h2>Вычисление гравитации в искривленном пространстве</h2>
+            <p>Интерактивная симуляция потенциального поля. Решает уравнение Лапласа методом SOR! (Грубо говоря, вычисляет настоящую гравитацию в области порталов). Не методом Optozorax! С объяснениями</p>
+            <div class="tags"><span>Python</span><span>NumPy</span><span>Physics/Maths</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="win floating-window links-window" id="links-window" data-window data-draggable hidden aria-label="Links">
+      <div class="tb" data-drag-handle>
+        <span class="tt">links/</span>
+        <button class="window-close" type="button" data-close-window aria-label="Close links window">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="wbody">
+        <nav class="link-list" aria-label="External links">
+          <a class="link-row" href="https://github.com/ZinCin/" target="_blank" rel="noopener noreferrer"><span class="link-key">github</span><span class="link-value">ZinCin</span><span class="link-arrow">↗</span></a>
+          <a class="link-row" href="https://t.me/ZinCin" target="_blank" rel="noopener noreferrer"><span class="link-key">telegram</span><span class="link-value">@ZinCin</span><span class="link-arrow">↗</span></a>
+          <a class="link-row" href="savasa003@gmail.com"><span class="link-key">email</span><span class="link-value">savasa003@gmail.com</span><span class="link-arrow">↗</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="win ff-window" id="fastfetch-window" data-window data-draggable aria-label="Visitor system information">
+      <div class="tb" data-drag-handle>
+        <span class="tt">~ : fastfetch</span>
+        <button class="window-close" type="button" data-close-window aria-label="Close fastfetch window">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="wbody">
+        <div class="ff">
+          <div class="art"><canvas id="art" aria-hidden="true"></canvas></div>
+          <div class="info">
+            <div class="rule"></div>
+            <h3>system</h3>
+            <div class="row"><i>os</i><b id="f-os">—</b></div>
+            <div class="row"><i>browser</i><b id="f-br">—</b></div>
+            <div class="row"><i>uptime</i><b id="f-up">—</b></div>
+            <div class="row"><i>locale</i><b id="f-loc">—</b></div>
+
+            <h3 class="s2">display</h3>
+            <div class="row"><i>screen</i><b id="f-res">—</b></div>
+            <div class="row"><i>refresh</i><b id="f-hz">—</b></div>
+            <div class="row"><i>viewport</i><b id="f-vp">—</b></div>
+
+            <h3 class="s3">hardware</h3>
+            <div class="row"><i>cpu</i><b id="f-cpu">—</b></div>
+            <div class="row"><i id="f-mem-k">memory</i><b><span id="f-mem">—</span><span class="meter" id="f-mem-m" hidden><span></span></span></b></div>
+            <div class="row"><i>battery</i><b id="f-bat">—</b></div>
+            <div class="row"><i>network</i><b id="f-net">—</b></div>
+            <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
