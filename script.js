@@ -18,7 +18,7 @@
     },
     set(key, value) {
       try { localStorage.setItem(key, JSON.stringify(value)); }
-      catch { /* localStorage unav. */ }
+      catch { /* localStorage unavailable */ }
     },
   };
 
